@@ -742,58 +742,40 @@ header {
 
 
 
-@media screen and (max-width: 992px) {
-    /* മെയിൻ കണ്ടെയ്‌നർ ഫോണിൽ ഫ്ലെക്സ് ആക്കുന്നു */
+@media screen and (max-width: 768px) {
+    /* 1. കണ്ടെയ്‌നർ സെറ്റിംഗ്സ് */
     .container {
         display: flex;
         flex-direction: column; /* സാധനങ്ങൾ ഒന്നിന് താഴെ ഒന്നായി വരാൻ */
-        height: auto;
-        min-height: 100vh;
-        overflow-x: hidden; /* സൈഡിലേക്ക് വലിഞ്ഞു പോകുന്നത് തടയാൻ */
     }
 
-    /* ഇടതുവശത്തെ മെനു ബാർ മുകളിലേക്ക് മാറ്റാൻ */
+    /* 2. സൈഡ്ബാറിനെ മുകളിലെ ഒരു ചെറിയ ബാർ ആക്കുന്നു */
     .sidebar {
         width: 100% !important;
-        height: auto !important;
-        flex-direction: row !important;
+        height: 60px !important; /* ഉയരം കുറച്ചു */
         position: relative !important;
-        padding: 10px 0;
+        flex-direction: row !important; /* ഐക്കണുകൾ വരിയായി വരാൻ */
         justify-content: space-around;
-        background: #1a161f;
+        padding: 5px;
+        order: 1; /* ഇത് ഒന്നാമത് നിൽക്കും */
     }
 
     .sidebar .nav-links {
         flex-direction: row !important;
-        margin: 0;
+        gap: 15px;
     }
 
-    /* മെയിൻ കണ്ടന്റ് സ്ക്രീനിന്റെ ഫുൾ വീതി എടുക്കാൻ */
+    /* 3. മെയിൻ കണ്ടന്റ് ഐക്കണുകളുടെ തൊട്ടു താഴെ വരാൻ */
     .main-content {
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 15px !important;
+        order: 2; /* ഇത് രണ്ടാമത് വരും */
+        width: 100%;
+        margin: 0;
+        padding: 10px;
     }
 
-    /* ഗ്രിഡ് സിംഗിൾ കോളം ആക്കുന്നു */
-    .dashboard-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    /* വശത്തുള്ള ഫ്രണ്ട്സ് ലിസ്റ്റ് ഹൈഡ് ചെയ്യുകയോ താഴേക്ക് മാറ്റുകയോ ചെയ്യാം */
-    .right-sidebar {
-        width: 100% !important;
-        position: relative !important;
-        height: auto !important;
-        flex-direction: row !important;
-        border: none !important;
-        padding: 20px;
-        justify-content: center;
-    }
-
-    .friends-list {
-        flex-direction: row !important;
-        gap: 10px;
+    /* 4. ഹെഡറിലെ വലിയ ഗ്യാപ്പ് ഒഴിവാക്കാൻ */
+    header {
+        margin-top: 10px;
     }
 }
 
