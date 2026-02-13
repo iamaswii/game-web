@@ -742,29 +742,68 @@ header {
 
 
 
-/* ഫോണുകൾക്കും ടാബ്‌ലെറ്റുകൾക്കും വേണ്ടി (Responsive Design) */
-@media screen and (max-width: 768px) {
-  .container {
-    display: flex;
-    flex-direction: column; /* സൈഡ് ബാറും കണ്ടന്റും ഒന്നിന് താഴെ ഒന്നായി വരാൻ */
-    padding: 10px;
-    width: 100%;
-  }
+/* --- ഫോണുകൾക്ക് വേണ്ടിയുള്ള പ്രത്യേക മാറ്റങ്ങൾ (Responsive Design) --- */
+@media screen and (max-width: 992px) {
+    .container {
+        /* ഗ്രിഡ് മാറ്റി എല്ലാം ഒന്നിന് താഴെ ഒന്നാക്കുന്നു */
+        display: flex;
+        flex-direction: column; 
+        height: auto;
+        overflow-x: hidden;
+    }
 
-  .sidebar, .right-sidebar {
-    width: 100%; /* സൈഡ് ബാറുകൾ ഫോൺ സ്ക്രീൻ ഫുൾ ആയി വരാൻ */
-    position: relative; /* ലാപ്ടോപ്പിൽ ഫിക്സഡ് ആണെങ്കിൽ അത് മാറ്റാൻ */
-    margin-bottom: 20px;
-  }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        padding: 10px;
+        position: relative;
+    }
 
-  .main-content {
-    width: 100%;
-    margin-left: 0; /* ലാപ്ടോപ്പിലെ സൈഡ് ഗ്യാപ്പ് ഒഴിവാക്കാൻ */
-  }
+    .sidebar .nav-links {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
 
-  /* ഗെയിം കാർഡുകൾ ഫോണിൽ 1 അല്ലെങ്കിൽ 2 എണ്ണം വീതം വരാൻ */
-  .game-list { 
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-  }
+    .main-content {
+        width: 100%;
+        margin: 0;
+        padding: 15px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* ലാപ്ടോപ്പിലെ രണ്ട് കോളം ഫോണിൽ ഒന്നാക്കുന്നു */
+        gap: 20px;
+    }
+
+    .right-sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 20px;
+        position: relative;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .friends-list {
+        flex-direction: row;
+        overflow-x: auto; /* ഫ്രണ്ട്സ് ലിസ്റ്റ് സൈഡിലേക്ക് നീക്കി കാണാൻ */
+        gap: 15px;
+        padding: 10px;
+    }
+
+    /* വലോറന്റ് കാർഡ് ഫോണിൽ ചെറുതാക്കാൻ */
+    .featured-card {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .card-image img {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 20px;
+    }
 }
