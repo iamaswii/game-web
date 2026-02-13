@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Dashboard</title>
+    <link rel="stylesheet" href="game.css">
+    <!-- Boxicons for icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Left Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class='bx bxl-sketch'></i>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#"><i class='bx bxs-home-alt-2'></i></a></li>
+                <li><a href="#"><i class='bx bxs-joystick'></i></a></li>
+                <li><a href="#"><i class='bx bx-hash'></i></a></li>
+                <li><a href="#"><i class='bx bxs-shopping-bag'></i></a></li>
+                <li><a href="#"><i class='bx bxs-headphone'></i></a></li>
+                <li><a href="#"><i class='bx bxs-cog'></i></a></li>
+            </ul>
+            <div class="add-btn">
+                <a href="#"><i class='bx bx-plus'></i></a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header>
+                <div class="greeting">
+                    <h1>Good evening, ASWIN</h1>
+                </div>
+                <div class="search-bar">
+                    <i class='bx bx-search'></i>
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="header-icons">
+                    <i class='bx bxs-cart'></i>
+                    <i class='bx bxs-bell'></i>
+                </div>
+            </header>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Left Column -->
+                <div class="col-left">
+                    <!-- Featured Game Card -->
+                    <div class="card featured-card element-animate">
+                        <div class="card-content">
+                            <div class="tags">
+                                <span class="tag popular"><i class='bx bxs-flame'></i> Popular</span>
+                                <span class="platform"><i class='bx bxl-steam'></i></span>
+                                <span class="platform"><i class='bx bxl-windows'></i></span>
+                            </div>
+                            <h2>Valorant</h2>
+                            <p>Valorant is a multiplayer computer game developed and published by Riot Games. Valorant
+                                is Riot Games' first first-person shooter game.</p>
+                            <div class="featured-actions">
+                                <div class="avatars">
+                                    <img src="./innocent kitten Oo.jpg" alt="">
+                                    <img src="./Snoopy Dawg 🗿.jpg" alt="">
+                                    <img src="./download (6).jpg" alt="">
+                                    <img src="./download (5).jpg" alt="">
+                                </div>
+                                <button class="btn-reviews"><i class='bx bxl-apple'></i> +53 Reviews</button>
+                            </div>
+                        </div>
+                        <div class="card-image">
+                            <!-- Placeholder for Valorant Character -->
+                            <img src="./Cypher-removebg-preview.png"
+                                alt="Valorant Agent">
+                        </div>
+                    </div>
+
+                    <!-- New Games Section -->
+                    <div class="section-header">
+                        <h3>New Games</h3>
+                        <a href="#" class="see-more">See More</a>
+                    </div>
+                    <div class="new-games-grid">
+                        <div class="game-card small glass element-animate">
+                            <!-- <div class="game-badge"><i class='bx bx-play'></i></div> -->
+                            <div class="game-info-overlay">
+                                <h4>ARK: Survival Evolved</h4>
+                                <p>Ark: Survival Evolved is a 2017 action-adventure survival video game developed by Studio Wildcard. In the game, players must survive being stranded on one of several maps filled with roaming dinosaurs, fictional fantasy monsters, and other prehistoric animals, natural hazards, and potentially hostile human players. </p>
+                            </div>
+                        </div>
+                        <div class="game-card small glass element-animate"
+                            style="background-image: url('./My\ Ark\ Drawings.jpg'); background-size: cover;">
+                            <!-- <img src="" alt="Dishonored"> -->
+                            <div class="game-info-bottom">
+                                <h4>ARK: Survival Evolved</h4>
+                                <p>Standard Edition</p>
+                            </div>
+                        </div>
+                        <div class="game-card small glass element-animate next-arrow">
+                            <i class='bx bx-chevron-right'></i>
+                        </div>
+                    </div>
+
+                    <!-- Last Downloads -->
+                    <div class="section-header">
+                        <h3>Last Downloads</h3>
+                        <a href="#" class="see-more">See More</a>
+                    </div>
+                    <div class="download-card glass element-animate">
+                        <div class="download-info">
+                            <div class="game-icon">
+                                <i class='bx bxl-unity'></i> <!-- Placeholder icon logo -->
+                                <span>FIFA 23</span>
+                            </div>
+                            <div class="game-details">
+                                <h4>FIFA 23</h4>
+                                <p>Sports simulator</p>
+                            </div>
+                        </div>
+                        <div class="download-progress">
+                            <div class="progress-info">
+                                <span>1 hour 23 min.</span>
+                                <span>255Mb of 1.23Gb</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="fill" style="width: 25%;"></div>
+                            </div>
+                        </div>
+                        <div class="download-actions">
+                            <button class="btn-icon"><i class='bx bx-pause'></i></button>
+                            <button class="btn-icon"><i class='bx bx-x'></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="col-right">
+                    <!-- Games List -->
+                    <div class="games-list">
+                        <div class="list-item glass element-animate">
+                            <img src="./Đúng bạn là nhất.jpg" class="list-img" alt="">
+                            <div class="list-info">
+                                <h4>Unravel 2 <span class="sub">(Standard...</span></h4>
+                                <p>Edition + Starter Pass)</p>
+                            </div>
+                            <i class='bx bx-chevron-right'></i>
+                        </div>
+                        <div class="list-item glass element-animate">
+                            <img src="./𝚃𝚘𝚖 𝚊𝚗𝚍 𝙹𝚎𝚛𝚛𝚢 _ 𝙴𝚙𝚒𝚜𝚘𝚍𝚎 𝟹.jpg" class="list-img" alt="">
+                            <div class="list-info">
+                                <h4>Subway Surf</h4>
+                            </div>
+                            <i class='bx bx-chevron-right'></i>
+                        </div>
+                        <div class="list-item glass element-animate">
+                            <img src="./aesthetic of mr beans.jpg" class="list-img" alt="">
+                            <div class="list-info">
+                                <h4>Red Dead Redemption 3</h4>
+                                <p>(Premium Pack)</p>
+                            </div>
+                            <i class='bx bx-chevron-right'></i>
+                        </div>
+                    </div>
+
+                    <!-- Statistics -->
+                    <div class="section-header">
+                        <h3>Your Statistic</h3>
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </div>
+                    <div class="stats-card glass element-animate">
+                        <div class="chart-container">
+                            <svg viewBox="0 0 36 36" class="circular-chart">
+                                <path class="circle-bg" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle" stroke-dasharray="75, 100" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            </svg>
+                            <div class="chart-text">
+                                <span class="label">Total hours</span>
+                                <span class="value">12,340h</span>
+                            </div>
+                        </div>
+                        <div class="stats-list">
+                            <div class="stat-item">
+                                <i class='bx bxl-sketch' style="color: #ff6b6b;"></i>
+                                <span>2,340h</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class='bx bxl-steam' style="color: #fff;"></i>
+                                <span>5,420h</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class='bx bxl-discord-alt' style="color: #6b6bff;"></i>
+                                <span>4,580h</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar (Friends) -->
+        <aside class="right-sidebar">
+            <div class="user-profile">
+                <div class="avatar-ring">
+                    <img src="./aesthetic of mr beans.jpg" alt="User">
+                </div>
+            </div>
+            <div class="friends-list">
+                <div class="friend-avatar"><img src="./download (5).jpg" alt=""></div>
+                <div class="friend-avatar online"><img src="./download (6).jpg" alt=""></div>
+                <div class="friend-avatar playing"><img src="./Đúng bạn là nhất.jpg" alt=""></div>
+                <div class="friend-avatar"><img src="./Snoopy Dawg 🗿.jpg" alt=""></div>
+                <div class="friend-avatar"><img src="./innocent kitten Oo.jpg" alt=""></div>
+                <div class="friend-avatar"><img src="./𝚃𝚘𝚖 𝚊𝚗𝚍 𝙹𝚎𝚛𝚛𝚢 _ 𝙴𝚙𝚒𝚜𝚘𝚍𝚎 𝟹.jpg" alt=""></div>
+            </div>
+            <div class="bottom-actions">
+                <div class="action-btn"><i class='bx bxs-chat'></i></div>
+                <div class="action-btn"><i class='bx bxs-group'></i></div>
+                <div class="action-btn"><i class='bx bxs-party'></i></div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,741 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-color: #2e1a21;
+    /* Dark brownish plum */
+    --card-bg: #4e2a33;
+    /* Lighter plum */
+    --card-hover: #5e3540;
+    --accent: #ff6b6b;
+    /* Coral/Orange */
+    --text-white: #ffffff;
+    --text-gray: #a0a0a0;
+    --sidebar-width: 80px;
+    --right-sidebar-width: 80px;
+    --border-radius: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-white);
+    height: 100vh;
+    overflow: hidden;
+    /* Prevent body scroll */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 1600px;
+    /* Limit max width for large screens */
+    background: var(--bg-color);
+    overflow: hidden;
+}
+
+/* --- Left Sidebar --- */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    gap: 40px;
+    background: transparent;
+    /* Seamless */
+}
+
+.sidebar .logo i {
+    font-size: 28px;
+    color: var(--text-white);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-links li a {
+    color: var(--text-gray);
+    font-size: 20px;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.nav-links li.active a,
+.nav-links li a:hover {
+    color: var(--accent);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.add-btn {
+    margin-top: auto;
+}
+
+.add-btn a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: var(--accent);
+    /* Dashed border effect in image is complex, sticking to simple */
+    border-radius: 50%;
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    /* Basic approximation */
+}
+
+/* --- Main Content --- */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow-y: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.greeting h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.search-bar {
+    background: #3a222a;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 40%;
+}
+
+.search-bar i {
+    color: var(--text-gray);
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    color: var(--text-white);
+    width: 100%;
+    outline: none;
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.header-icons i {
+    font-size: 20px;
+    color: var(--text-gray);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.header-icons i:hover {
+    color: var(--text-white);
+}
+
+/* --- Dashboard Grid --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    height: 100%;
+}
+
+.col-left,
+.col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Featured Card */
+.featured-card {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+    /* Orange gradient */
+    border-radius: var(--border-radius);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    height: 380px;
+    /* Fixed height for consistent look */
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-content {
+    z-index: 2;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tags {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.tag.popular {
+    background: rgba(255, 255, 255, 0.9);
+    color: #ff6b6b;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.platform {
+    background: rgba(0, 0, 0, 0.2);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+.featured-card h2 {
+    font-size: 48px;
+    line-height: 1;
+    margin: 15px 0;
+}
+
+.featured-card p {
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.9;
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+
+.featured-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatars {
+    display: flex;
+}
+
+.avatars img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #ff6b6b;
+    margin-left: -10px;
+    object-fit: cover;
+}
+
+.avatars img:first-child {
+    margin-left: 0;
+}
+
+.btn-reviews {
+    background: #fff;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Valorant Background Image trick */
+.featured-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('https://w.wallhaven.cc/full/vg/wallhaven-vg8885.jpg') no-repeat center center/cover;
+    opacity: 0.2;
+    /* Blend it */
+    mix-blend-mode: overlay;
+}
+
+.card-image img {
+    position: absolute;
+    right: -50px;
+    bottom: -50px;
+    height: 110%;
+    z-index: 1;
+    pointer-events: none;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+
+/* Section Headers */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.section-header h3 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.see-more {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+/* New Games Grid */
+.new-games-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.element-animate {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.game-card.small {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    height: 180px;
+    flex: 1;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.game-card.small:hover {
+    transform: translateY(-5px);
+}
+
+.game-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.game-info-overlay {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+}
+
+.game-info-overlay h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.game-info-overlay p {
+    font-size: 10px;
+    color: var(--text-gray);
+    line-height: 1.4;
+}
+
+.next-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--card-bg);
+    width: 50px !important;
+    /* Override flex */
+    flex: 0 0 50px;
+}
+
+/* Last Downloads */
+.download-card {
+    background: linear-gradient(to right, #aa4b6b, #6b6b83, #3b8d99);
+    /* Placeholder */
+    background: #792c3a;
+    /* Fallback from image */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    border-radius: 20px;
+}
+
+.download-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.game-icon {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    color: #000;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    flex-direction: column;
+}
+
+.game-icon span {
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.download-progress {
+    flex: 1;
+    margin: 0 30px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.progress-bar {
+    height: 6px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-bar .fill {
+    height: 100%;
+    background: #fff;
+}
+
+.download-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Right Column Games List --- */
+.games-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.list-item {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.list-item:hover {
+    background: var(--card-hover);
+}
+
+.list-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.list-info {
+    flex: 1;
+}
+
+.list-info h4 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.sub {
+    color: var(--text-gray);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.list-info p {
+    font-size: 12px;
+    color: var(--text-gray);
+}
+
+/* Statistics Chart */
+.stats-card {
+    background: #231216;
+    /* Darker card */
+    padding: 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-container {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.circular-chart {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 250px;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #3c2a30;
+    stroke-width: 3.8;
+}
+
+.circle {
+    fill: none;
+    stroke: url(#gradient);
+    /* SVG gradient needs defs, but using solid for now or CSS trick */
+    stroke: #fff;
+    /* Fallback */
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    /* Stroke dasharray calculated in HTML */
+    animation: progress 1s ease-out forwards;
+}
+
+.chart-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-text .label {
+    font-size: 10px;
+    color: var(--text-gray);
+}
+
+.chart-text .value {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.stats-list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+}
+
+.stat-item i {
+    font-size: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    border-radius: 50%;
+}
+
+/* --- Right Sidebar (Friends) --- */
+.right-sidebar {
+    width: var(--right-sidebar-width);
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.user-profile .avatar-ring {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    padding: 2px;
+}
+
+.user-profile img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.friends-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.friend-avatar {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.friend-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    /* default */
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.friend-avatar:hover img {
+    transform: scale(1.1);
+}
+
+.friend-avatar.online::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background: #4cd137;
+    border-radius: 50%;
+    border: 2px solid var(--bg-color);
+}
+
+.friend-avatar.playing::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background: #e1b12c;
+    border: 2px solid var(--bg-color);
+    border-radius: 50%;
+    /* Using circle for simplicity */
+}
+
+.bottom-actions {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.action-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-gray);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.action-btn:hover {
+    color: #fff;
+    background: var(--accent);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 3px;
+}
