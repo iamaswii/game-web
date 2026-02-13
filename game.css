@@ -739,3 +739,32 @@ header {
     background: #555;
     border-radius: 3px;
 }
+
+
+
+/* ഫോണുകൾക്കും ടാബ്‌ലെറ്റുകൾക്കും വേണ്ടി (Responsive Design) */
+@media screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column; /* സൈഡ് ബാറും കണ്ടന്റും ഒന്നിന് താഴെ ഒന്നായി വരാൻ */
+    padding: 10px;
+    width: 100%;
+  }
+
+  .sidebar, .right-sidebar {
+    width: 100%; /* സൈഡ് ബാറുകൾ ഫോൺ സ്ക്രീൻ ഫുൾ ആയി വരാൻ */
+    position: relative; /* ലാപ്ടോപ്പിൽ ഫിക്സഡ് ആണെങ്കിൽ അത് മാറ്റാൻ */
+    margin-bottom: 20px;
+  }
+
+  .main-content {
+    width: 100%;
+    margin-left: 0; /* ലാപ്ടോപ്പിലെ സൈഡ് ഗ്യാപ്പ് ഒഴിവാക്കാൻ */
+  }
+
+  /* ഗെയിം കാർഡുകൾ ഫോണിൽ 1 അല്ലെങ്കിൽ 2 എണ്ണം വീതം വരാൻ */
+  .game-list { 
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+}
